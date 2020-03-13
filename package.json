@@ -1,6 +1,6 @@
 {
   "name": "offline-plugin",
-  "version": "5.0.7",
+  "version": "5.6.0",
   "description": "offline-plugin for webpack",
   "main": "lib/index.js",
   "files": [
@@ -17,7 +17,7 @@
     "test:ci_fixtures": "npm run test:fixtures",
     "test:ci_browser": "npm run install:browser-tests && npm run test:browser",
     "test:ci_all": "npm run test:ci_fixtures && npm run test:ci_browser",
-    "build": "./node_modules/.bin/babel src/ -d lib/",
+    "build": "babel src/ -d lib/",
     "watch": "npm run build -- --watch",
     "install:build-deps": "node build/install-build-deps.js",
     "install:browser-tests": "node build/install-browser-tests.js",
@@ -83,9 +83,7 @@
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "mocha": "^4.0.1",
-    "webpack": "4.26.x"
-  },
-  "buildDependencies": {
+    "webpack": "4.26.x",
     "babel": "^5.8.38"
   },
   "testsBrowserDependencies": {

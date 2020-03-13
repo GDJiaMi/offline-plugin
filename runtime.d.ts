@@ -69,3 +69,5 @@ export function applyUpdate(): void;
  * @memberOf RuntimeStatic
  */
 export function update(): void;
+
+export function hasSW(): boolean;

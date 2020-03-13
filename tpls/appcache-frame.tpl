@@ -142,6 +142,7 @@
   }
 
   function sendEvent(event) {
+    console.log('manifest frame trigger event', event)
     window.parent.postMessage('__offline-plugin_AppCacheEvent:' + event, '*');
   }
 

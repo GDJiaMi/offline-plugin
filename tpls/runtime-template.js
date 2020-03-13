@@ -243,3 +243,4 @@ function update() {
 exports.install = install;
 exports.applyUpdate = applyUpdate;
 exports.update = update;
+exports.hasSW = hasSW;

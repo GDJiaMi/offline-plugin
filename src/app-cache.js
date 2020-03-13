@@ -1,7 +1,7 @@
 import { getSource, pathToBase, isAbsoluteURL, isAbsolutePath } from './misc/utils';
 
 import fs from 'fs';
-import path from 'path';
+import _path from 'path';
 import deepExtend from 'deep-extend';
 
 export default class AppCache {
@@ -56,7 +56,7 @@ export default class AppCache {
       }
 
       return result;
-    }, null) || []).map(pathRewrite);
+    }, null) || []).map(pathRewrite).map(p => _path.posix.relative(this.output, p));
 
     const path = this.output + this.name;
     const manifest = this.getManifestTemplate(cache, plugin);
@@ -139,7 +139,7 @@ export default class AppCache {
 
   getPageContent() {
     if (this.events) {
-      return fs.readFileSync(path.join(__dirname, '../tpls/appcache-frame.tpl'), 'utf-8');
+      return fs.readFileSync(_path.join(__dirname, '../tpls/appcache-frame.tpl'), 'utf-8');
     } else {
       return '';
     }

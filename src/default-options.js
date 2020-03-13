@@ -28,13 +28,7 @@ export default {
   appShell: null,
 
   rewrites(asset) {
-    return asset.replace(/^([\s\S]*?)index.htm(l?)$/, (match, dir) => {
-      if (isAbsoluteURL(match)) {
-        return match;
-      }
-
-      return dir || './';
-    });
+    return asset;
   },
 
   ServiceWorker: {
